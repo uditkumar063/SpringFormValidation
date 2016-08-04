@@ -1,4 +1,4 @@
-package com.ads.controller;
+package com.udt.controller;
 
 import com.udt.model.User;
 import javax.validation.Valid;
@@ -24,7 +24,7 @@ public class LoginController {
     public String getLoginPage(@ModelAttribute("user") User user){
         return "loginPage";
     }
-    @RequestMapping("validateLogin")
+    @RequestMapping("loginValidate")
     public String validate(@Valid@ModelAttribute("user") User user,BindingResult br){
         if(br.hasErrors()){
             return "loginPage";
