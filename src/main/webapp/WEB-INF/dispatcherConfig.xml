@@ -10,7 +10,8 @@
                            http://www.springframework.org/schema/context/spring-context.xsd
                            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
           
-      <!-- support JSR303 annotation -->                 
+    <context:annotation-config/>
+    <!-- support JSR303 annotation -->                 
     <mvc:annotation-driven/>
     <context:component-scan base-package="com.udt"/>
    
@@ -18,6 +19,17 @@
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
           p:prefix="/WEB-INF/jsp/" p:suffix=".jsp"/>
     
-     <!-- binding  messages.properties -->
-    <bean name = "messageSource" class="org.springframework.context.support.ResourceBundleMessageSource" p:basename="messages" />
+    <!-- binding  messages.properties -->
+    <bean name = "messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource"
+          p:basename="/WEB-INF/messages" />
+    
+<!--    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="messages"/>
+    </bean>	-->
+<!--    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/>
+    <mvc:interceptors>
+        <bean id="localeChangeInterceptor"	class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <property name="paramName" value="language"/>	
+        </bean>
+    </mvc:interceptors>-->
 </beans>
