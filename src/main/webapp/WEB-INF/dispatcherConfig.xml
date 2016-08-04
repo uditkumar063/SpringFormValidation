@@ -19,5 +19,5 @@
           p:prefix="/WEB-INF/jsp/" p:suffix=".jsp"/>
     
      <!-- binding  messages.properties -->
-    <bean name = "messageSource" class="org.springframework.context.support.ResourceBundleMessageSource" p:basename="resourceBundles/messages" />
+    <bean name = "messageSource" class="org.springframework.context.support.ResourceBundleMessageSource" p:basename="messages" />
 </beans>

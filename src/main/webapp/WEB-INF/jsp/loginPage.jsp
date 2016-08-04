@@ -36,8 +36,8 @@
             
             <form:password path="password"></form:password></br>
              <form:errors path="password" cssClass="error" element="div" />
-             <%--<msg:message code="NotEmpty.user.password"/>--%>
-            <input type="submit" value="SignIn"/>
+             <%----%>
+            <input type="submit" value="<msg:message code="NotEmpty.user.password"/>"/>
         </form:form>
     </body>
 </html>
